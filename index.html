@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Gerenciamento de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>TaskFlow</h1>
+        <nav>
+            <a href="/contato.html">Contato</a>
+            <a href="/login.html">Login</a>
+            <a href="/cadastro.html">Cadastro</a>
+            
+        </nav>
+    </header>
+    <main>
+            <h2>Tarefas Pendentes</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome da Tarefa</th>
+                        <th>Prazo</th>
+                        <th>Responsável</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="pending-tasks">
+                </tbody>
+            </table>
+            <button id="open-create-modal-btn">Criar Nova Tarefa</button> 
+        <div class="task-form">
+            <div id="task-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Criar Nova Tarefa</h2>
+                    <form id="task-form">
+                        <label for="task-name">Nome da Tarefa:</label>
+                        <input type="text" id="task-name" required>
+                        <label for="task-deadline">Prazo:</label>
+                        <input type="date" id="task-deadline" required>
+                        <label for="task-assignee">Responsável:</label>
+                        <input type="text" id="task-assignee" required>
+                        <button type="submit" class="btn-new-task">Criar Tarefa</button>
+                    </form>
+                </div>
+            </div>
+            <div id="edit-task-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="edit-modal-close">&times;</span>
+            <h2>Editar Tarefa</h2>
+            <form id="edit-task-form">
+                <label for="edit-task-name">Nome da Tarefa:</label>
+                <input type="text" id="edit-task-name" required>
+                <label for="edit-task-deadline">Prazo:</label>
+                <input type="date" id="edit-task-deadline" required>
+                <label for="edit-task-assignee">Responsável:</label>
+                <input type="text" id="edit-task-assignee" required>
+                <button type="submit" class="save-btn">Salvar Alterações</button>
+            </form>
+        </div>
+    </div>
+            <div id="delete-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" id="delete-modal-close">&times;</span>
+                    <h2>Confirmar Exclusão</h2>
+                    <p>Tem certeza que deseja excluir esta tarefa?</p>
+                    <button id="confirm-delete-btn">Excluir</button>
+                    <button id="cancel-delete-btn">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Plataforma de Gerenciamento de Tarefas</p>
+    </footer>
+    <script src="/script.js"></script>
+</body>
+</html>

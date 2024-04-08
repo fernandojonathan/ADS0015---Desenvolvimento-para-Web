@@ -263,7 +263,7 @@ footer {
     height: 20px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 767px) {
     header {
         flex-direction: column;
         height: auto;

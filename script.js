@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     const pendingTasks = [
-        { id: 1, name: "Agendar uma reunião de equipe para revisar o andamento do projeto", deadline: "2024-04-08", assignee: "Laura" },
-        { id: 2, name: "Finalizar o design de uma página da web", deadline: "2024-04-18", assignee: "Osvaldo" },
-        { id: 3, name: "Realizar testes de usabilidade em uma nova funcionalidade", deadline: "2024-04-28", assignee: "Fernando" },
-        { id: 4, name: "Resolver um bug relatado por um usuário", deadline: "2024-05-05", assignee: "Jhordan" },
-        { id: 5, name: "Preparar uma apresentação para uma reunião com stakeholders", deadline: "2024-05-08", assignee: "Daniel" }
+        { id: 1, name: "Agendar uma reunião de equipe para revisar o andamento do projeto", deadline: "2024-04-08", assignee: "Laura Seixas" },
+        { id: 2, name: "Finalizar o design de uma página da web", deadline: "2024-04-18", assignee: "Osvaldo Júnior" },
+        { id: 3, name: "Realizar testes de usabilidade em uma nova funcionalidade", deadline: "2024-04-28", assignee: "Fernando Jonathan" },
+        { id: 4, name: "Resolver um bug relatado por um usuário", deadline: "2024-05-05", assignee: "Jhordan Leandro" },
+        { id: 5, name: "Preparar uma apresentação para uma reunião com stakeholders", deadline: "2024-05-08", assignee: "José Silva" }
     ];
 
     const tbody = document.getElementById('pending-tasks');
@@ -50,6 +50,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const taskName = document.getElementById('task-name').value;
         const taskDeadline = document.getElementById('task-deadline').value;
         const taskAssignee = document.getElementById('task-assignee').value;
+
+        if (taskName.trim().length < 5) {
+            alert('O nome da tarefa deve ter pelo menos 5 caracteres.');
+            return;
+        }
+    
+        const assigneeWords = taskAssignee.trim().split(' ');
+        if (assigneeWords.length !== 2 || assigneeWords[0].length < 3) {
+            alert('O responsável pela tarefa deve ter nome e sobrenome, sendo o nome com pelo menos 3 letras.');
+            return;
+        }
 
         const newTask = {
             id: pendingTasks.length + 1,
@@ -99,9 +110,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const taskId = parseInt(editForm.dataset.taskId);
         const taskToEdit = pendingTasks.find(task => task.id === taskId);
         if (taskToEdit) {
-            taskToEdit.name = document.getElementById('edit-task-name').value;
-            taskToEdit.deadline = document.getElementById('edit-task-deadline').value;
-            taskToEdit.assignee = document.getElementById('edit-task-assignee').value;
+            const editedTaskName = document.getElementById('edit-task-name').value;
+            if (editedTaskName.trim().length < 5) {
+                alert('O nome da tarefa deve ter pelo menos 5 caracteres.');
+                return;
+            }
+            const editedTaskDeadline = document.getElementById('edit-task-deadline').value;
+            const editedTaskAssignee = document.getElementById('edit-task-assignee').value;
+            const assigneeWords = editedTaskAssignee.trim().split(' ');
+            if (assigneeWords.length !== 2 || assigneeWords[0].length < 3) {
+                alert('O responsável pela tarefa deve ter nome e sobrenome, sendo o nome com pelo menos 3 letras.');
+                return;
+            }
+    
+            taskToEdit.name = editedTaskName;
+            taskToEdit.deadline = editedTaskDeadline;
+            taskToEdit.assignee = editedTaskAssignee;
+    
             renderTasks();
             editModal.style.display = 'none';
         }

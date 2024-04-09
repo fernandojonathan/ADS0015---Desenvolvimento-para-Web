@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cancelDeleteBtn = document.getElementById('cancel-delete-btn');
 
     function renderTasks() {
-        tbody.innerHTML = '';
+        //tbody.innerHTML = '';
         pendingTasks.forEach(task => {
             const row = document.createElement('tr');
             row.innerHTML = `

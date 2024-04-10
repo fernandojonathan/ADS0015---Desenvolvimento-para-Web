@@ -62,6 +62,42 @@ main {
     margin-top: 30px;
     margin-bottom: 30px;
 }
+.forms{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    border-radius: 20px;
+    border: 1px solid #686868;
+    padding: 2em 1em;
+    gap: 1em;
+}
+.forms div {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+.forms input {
+   border-radius: 10px;
+   padding: 1em;
+   border: 1px solid #686868;
+}
+.forms button{
+    width: 40%;
+    margin-top: 1em;
+    border: none;
+    background-color: #777777;
+    color: #fff;
+    padding: 1em;
+    border-radius: 20px;
+    margin: 1em 0;
+}
+.forms button:hover{
+    transition: all 600ms;
+    box-shadow: inset 30em 0 0 0 #ffffff;
+    border: 1px solid #333;
+    color: #333;
+}
 
 @media screen and (max-width: 767px) {
     header {
@@ -73,5 +109,20 @@ main {
         margin-left: 0;
         margin-bottom: 10px;
     }
-
+    .forms{
+       
+        width: 100%;
+        padding: 3em 2em;
+        
+    }
+    .forms h1{
+        margin-bottom: .5em;
+    }
+    .forms div {
+        
+        width: 90%;
+    }
+    .forms button{
+        width: 60%;
+    }
 }

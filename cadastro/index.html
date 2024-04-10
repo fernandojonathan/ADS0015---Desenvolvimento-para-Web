@@ -11,14 +11,37 @@
 </head>
 <body>
     <header>
-        <h1><a href="/index.html">TaskFlow</a></h1>
+        <h1><a href="../index.html">TaskFlow</a></h1>
     </header>
     <main>
+        
+        <div id="error-message" style="color: red;"></div>
+        <form class="forms" method="post">
+            <h1>Faça seu cadastro agora!</h1>
+            <div>
+                <label>Email</label>
+                <input type="text" id="Email" required/>
+            </div>
+            <div>
+                <div id="error-message" style="color: yellow;"></div>
+                <label>CPF</label>
+                <input type="text" maxlength="11" id="CPF" required/>
+            </div>
+            <div>
+                <label>Telefone</label>
+                <input type="text" id="Telefone" maxlength="15" required/>
+            </div>
+            <div>
+                <label>Senha</label>
+                <input type="password" id="password" required minlength="6"maxlength="12"/>
+            </div>
+            <button>Cadastrar</button>
+        </form>
             
     </main>
     <footer>
         <p>&copy; 2024 Plataforma de Gerenciamento de Tarefas</p>
     </footer>
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
